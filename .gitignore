@@ -1,0 +1,9 @@
+# The instructor's own materials are never committed: lecture slides, practice
+# problems, solutions, exam papers, data. Syllabus: course materials are for
+# students currently enrolled in the course only.
+course/
+raw/
+*.zip
+
+.DS_Store
+Thumbs.db
