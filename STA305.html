@@ -83,6 +83,12 @@ hr{border:0;border-top:1px solid var(--rule);margin:24px 0}
 .Q,details,.method,.trap,.new{content-visibility:auto;contain-intrinsic-size:auto 220px}
 nav{will-change:transform}
 
+.ask{background:#FFFCF0;border:1px solid #D8C88A;border-left:4px solid #B9962F;
+ border-radius:7px;padding:9px 12px;margin:8px 0 0;font-size:.95rem}
+.ask .h{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;color:#8A6B12;
+ font-weight:700;text-transform:uppercase;margin-bottom:3px}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .ask{background:#26200E;border-color:#6B5A22}
+ :root:not([data-theme=light]) .ask .h{color:#E3C25F}}
 @media print{nav{display:none}body{font-size:10pt;background:#fff;color:#000}
  .Q,details,.method,.trap,.new{content-visibility:visible}
  details>summary{display:none}details>*{display:block!important}.Q,.sol,.step,.method{break-inside:avoid}}
@@ -245,6 +251,7 @@ randomly assigned. Scores recorded as a percentage.</p>
 (c) Identify the response and classify it as quantitative or categorical.<br>
 (d) Explain the importance of randomization in this study.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Pure vocabulary, no arithmetic. He wants the words <b>factor, level, treatment, crossed, response, quantitative</b> used correctly about <i>this</i> study. Two factors that pair up in every combination are crossed. Randomisation matters because it stops unmeasured differences between students lining up with the device or app.</div>
 <details><summary>Solution A1</summary><div class="sol">
 <p><b>(a)</b> Factor 1 is <b>device type</b> with 2 levels (tablet, laptop). Factor 2 is <b>study app</b> with
 3 levels (A, B, C). They are <b>crossed</b>, because every level of device type appears with every level of
@@ -277,6 +284,7 @@ Every part here wants the study's own words.</div>
 <p>(a) Find <span class="kx">\bar Y_T</span>. (b) Find SSA. (c) Find SSE. (d) Complete the ANOVA table.
 (e) Test for a difference in crop yield among the four pesticides.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A standard one-way ANOVA, but he has set two traps on purpose: the group sizes differ (<b>unbalanced</b>, so the grand mean must be weighted) and he gives you <b>sum of squared observations</b> instead of variances (so use the computational SS formulas, not the deviation ones). Spot both in the first 20 seconds and the question is routine.</div>
 <details><summary>Solution A2</summary><div class="sol">
 <div class="trap"><div class="h">Read this first</div>
 This design is <b>unbalanced</b> (5, 6, 4, 5) and gives you <span class="kx">\sum Y_{ij}^2</span> instead of
@@ -320,6 +328,7 @@ exercise regimen and sleep schedule. Double-blind. Randomly assigned. Balanced.<
 (b) Explain how a double-blind design is implemented here and its primary advantage.<br>
 (c) Test whether blood pressure reduction differs among the three doses.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Two halves. The first is Unit 1 recall: his four principles in his order. The second is an ANOVA table with blanks, where the treatment df is not given to you but is implied by the words 'three drug doses'. Read the sentence, not just the table.</div>
 <details><summary>Solution A3</summary><div class="sol">
 <div class="new"><div class="h">His 4 principles, and the order matters</div>
 <b>(1) Control &nbsp; (2) Block &nbsp; (3) Randomize &nbsp; (4) Replicate.</b><br>
@@ -361,6 +370,7 @@ mean blood pressure reduction differs among the three doses.</div>
 <p>(a) Interpret <span class="kx">\beta_0</span>. (b) Interpret <span class="kx">\beta_2</span>.
 (c) Estimate <span class="kx">\beta_2</span>. (d) Estimate <span class="kx">\sigma^2</span>. (e) Find SST.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>This is a coding question wearing a regression disguise. The whole thing turns on one observation: whichever group has <b>no indicator</b> is the reference. Once you know that, every beta is either the reference mean or a difference from it, and sigma-squared is just MSE.</div>
 <details><summary>Solution A4</summary><div class="sol">
 <div class="step"><div class="do">Which group is the reference? A student in <b>Online</b> has
 <span class="kx">I_1=0</span> and <span class="kx">I_2=0</span>. So <b>Online is the reference</b>.</div>
@@ -393,6 +403,7 @@ Prove that <span class="kx">F=\dfrac{MSA}{MSE}</span> follows an F distribution 
 <p><i>Show all steps and explicitly mention the name of the theorems or facts being used. Reasoning must
 appear at the correct step or the justification is not counted.</i></p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A bookwork proof. He is not testing algebra, he is testing whether you can <b>name the facts</b>: divide by sigma squared, invoke Cochran for independence, then quote the definition of an F. The marks are attached to those three phrases.</div>
 <details><summary>Solution A5</summary><div class="sol">
 <div class="step"><div class="do">\[ F=\frac{MSA}{MSE}=\frac{SSA/(a-1)}{SSE/(N-a)}
 =\frac{\big(SSA/\sigma^2\big)/(a-1)}{\big(SSE/\sigma^2\big)/(N-a)} \]</div>
@@ -443,6 +454,7 @@ E    0.0163   0.1724   0.0761   0.0011</pre>
 (i) Derive the formula for <span class="kx">\alpha_{SB}</span>.
 (ii) Is there evidence that diets D and E differ? YES or NO, with the p-value and all steps.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Four separate skills bolted onto one dataset: fill an R table, match each diagnostic test to the assumption it checks, decide whether to abandon ANOVA, and apply a family-wise correction. The correction part hinges on counting <b>all</b> pairwise comparisons, not the single one he asks about.</div>
 <details><summary>Solution B1</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> 20 fish evenly over 5 diets, so <span class="kx">n_j=4</span>,
 <span class="kx">N=20</span>, <span class="kx">a=5</span>. df: <span class="kx">a-1=4</span>,
@@ -493,6 +505,7 @@ slightly stricter, which is why Sidak has marginally more power.</div></div>
 (c) Express <span class="kx">H_0:\beta_4=0</span> in terms of the diet means.
 (d) Write <span class="kx">H_0</span> of equal means for the <b>cell means</b> model.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>The same three coding schemes again, so recognise the pattern rather than re-deriving. The only real thinking is spotting that diet A is the reference (it has no indicator) and that effect coding centres on the grand mean.</div>
 <details><summary>Solution B2</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> Indicators exist for B, C, D, E, so <b>A is the reference</b>.
 \[ \hat\beta_0=\bar Y_A=\boxed{50.4} \]</div>
@@ -522,6 +535,7 @@ common lost mark in this whole topic.</div>
 <p>(a) Are they mutually orthogonal? (b) Test <span class="kx">H_0:\psi_1=0</span> at 5%.
 (c) Using Bonferroni with all three contrasts, build an <b>85%</b> CI for <span class="kx">\psi_3</span>.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Three contrasts, so 'mutually orthogonal' means checking <b>three pairs</b>, not one. Then one contrast is tested alone (no correction) and another gets a corrected interval (correction needed). He is checking that you know when a correction applies and when it does not.</div>
 <details><summary>Solution B3</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> Coefficients:
 <span class="kx">\mathbf c_1=(1,-1,0,0)</span>, <span class="kx">\mathbf c_2=(0,0,1,-1)</span>,
@@ -567,6 +581,7 @@ family level: programs 1 and 2 together differ from programs 3 and 4 together.</
 (b) Derive <span class="kx">\mathrm{Corr}(\bar Y_j,\bar Y)</span>.
 (c) Derive <span class="kx">V(\bar Y_j-\bar Y)</span>.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A covariance proof. The key insight is that a group mean and the grand mean <b>share data</b>, so they are not independent and you cannot just add variances. Write the grand mean as an average of the group means and the whole thing collapses.</div>
 <details><summary>Solution B4</summary><div class="sol">
 <div class="new"><div class="h">The key realisation</div>
 <span class="kx">\bar Y_j</span> and <span class="kx">\bar Y</span> are <b>not independent</b>, because
@@ -621,6 +636,7 @@ interpret it, <b>without</b> the words low, medium or strong.</p>
 <span class="kx">-1</span>): (i) estimate <span class="kx">\alpha_0</span>; (ii) estimate
 <span class="kx">\alpha_2</span>.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>The bread-and-butter question, worth 9 marks. Half of it is the ANOVA table; the other half is reading coefficients off two coding schemes. Note he bans the words low/medium/strong for the R-squared, so he wants the <b>meaning</b>, not a label.</div>
 <details><summary>Solution C1</summary><div class="sol">
 <div class="step"><div class="do">Balanced, <span class="kx">N=15</span>,
 <span class="kx">\bar Y_T=(62+66+52)/3=60</span>.
@@ -654,6 +670,7 @@ from it. <b>Free check:</b> the omitted group must return as
 <p>(a) Are they orthogonal? (b)(i) <span class="kx">\hat\psi_1</span>. (ii) <span class="kx">SS_{\psi_1}</span>.
 (c) Bonferroni <b>90%</b> CI for <span class="kx">\psi_1</span>.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Contrasts on data you already analysed. Orthogonality is one dot product. The confidence interval is the only part with a twist: 90% with two contrasts means you halve alpha for Bonferroni, then halve again for a two-sided t.</div>
 <details><summary>Solution C2</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> \[ (1)(1)+(1)(-2)+(-2)(1)=1-2-2=-3\neq0\;\Rightarrow\;\textbf{NO} \]</div>
 <div class="why">Balanced, so the plain dot product. Both do sum to zero individually, so they <i>are</i>
@@ -683,6 +700,7 @@ contrasts, just not orthogonal ones.</div></div>
 (c) Test the interaction. (d) Explain interaction in plain English <b>without</b> using the word.
 (e) Test both main effects.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A two-way table with mixed givens: some sums of squares, one <b>mean square</b>. Convert before you start. Then the order is fixed: interaction first, and only if it is not significant may you talk about main effects.</div>
 <details><summary>Solution C3</summary><div class="sol">
 <div class="new"><div class="h">Two-way vocabulary, once</div>
 <span class="kx">\bar Y_{jk}</span> is a <b>cell</b> mean (one A level and one B level).
@@ -732,6 +750,7 @@ B: <span class="kx">H_0:\beta_1=\beta_2=\beta_3=0</span>, <span class="kx">10.26
 <span class="kx">T_i,B_i,Q_i</span> table. (c) Find <span class="kx">SSA</span> (adjusted).
 (d) Find <span class="kx">SSB</span>. (e) Test the treatment effect at 5%, given <span class="kx">MSE=1.8577</span>.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>The most mechanical question on the paper once you know the recipe, and the most confusing if you do not. Everything flows from reading a, b, k and r off the table by <b>counting blanks</b>. The Q values summing to zero is your safety net.</div>
 <details><summary>Solution C4</summary><div class="sol">
 <div class="new"><div class="h">BIBD vocabulary, once</div>
 <span class="kx">k</span> = block size, how many treatments fit in one block. <b>Incomplete</b> means
@@ -791,6 +810,7 @@ affected by age.</p>
 <p>(d) In terms of the betas, write <span class="kx">H_0</span> for: (i) interaction between diet and covariate;
 (ii) equal slopes for all diets; (iii) controlling for age, diet has no significant effect.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>No arithmetic at all, 8 marks. It is entirely about writing hypotheses in terms of betas. Build the table of group rows first and every answer is read off it by subtraction. Never try to recall these.</div>
 <details><summary>Solution C5</summary><div class="sol">
 <div class="new"><div class="h">ANCOVA, and the only technique you need</div>
 A <b>covariate</b> is a numeric variable you measured but did not assign. Controlling for it does the same
@@ -847,6 +867,7 @@ intercept shifts and the slope shifts must vanish. All four.</div></div>
 (c) Derive <span class="kx">V(\bar y_i-\bar y_T)</span>.
 <i>Hint given on the paper:</i> <span class="kx">V(aX+bY)=a^2V(X)+b^2V(Y)+2ab\,\mathrm{Cov}(X,Y)</span>.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Same shape as B4 but in the two-way model. The constraints that all effects sum to zero are what kill most of the terms; the difficulty is again the covariance between a mean and the grand mean.</div>
 <details><summary>Solution C6</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> \[ \bar y_i=\frac1b\sum_{j=1}^{b}
 \big(\mu_T+\alpha_i+\beta_j+(\alpha\beta)_{ij}+\varepsilon_{ij}\big) \]
@@ -894,6 +915,7 @@ Residuals  ?    11.20       ?</pre>
 <p>(a) Test for a difference in mean sleep duration. (b) Find <span class="kx">R^2</span> and interpret with
 Cohen's guidelines.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>R output with blanks. Recover a from the factor df, N from the words, and remember R never prints a Total row, so you build SST yourself.</div>
 <details><summary>Solution D1</summary><div class="sol">
 <div class="step"><div class="do"><span class="kx">a=3+1=4</span>, <span class="kx">N=28</span>,
 residual df <span class="kx">=24</span>.
@@ -916,6 +938,7 @@ with <span class="kx">X_1</span> flagging A, <span class="kx">X_2</span> flaggin
 (c) <span class="kx">H_0</span> of equal means in the cell means model. (d) Same in the dummy model.
 (e) If <span class="kx">H_0:\beta_3=0</span>, rewrite in terms of population means.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Coding again. The single most common error here is assuming the subscript on beta matches the group number. Map the indicators explicitly before computing anything.</div>
 <details><summary>Solution D2</summary><div class="sol">
 <div class="step"><div class="do">Map the subscripts first:
 <span class="kx">\beta_1\to I_B</span>, <span class="kx">\beta_2\to I_C</span>,
@@ -938,6 +961,7 @@ with <span class="kx">X_1</span> flagging A, <span class="kx">X_2</span> flaggin
 (d) Build an <b>81%</b> simultaneous CI for <span class="kx">\psi_2</span> using Sidak-Bonferroni,
 <span class="kx">k=2</span>.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Contrasts plus a Sidak interval. He gives standard deviations, so square them. The 81% confidence level is deliberately odd so you must actually use the formula rather than recall a t value.</div>
 <details><summary>Solution D3</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> \[ (1)(1)+(-1)(-2)+(0)(1)=1+2+0=3\neq0\;\Rightarrow\;\textbf{NO} \]
 <b>(b)</b> \[ SSE=7(2^2+3^2+1^2)=7(14)=98,\qquad MSE=\frac{98}{24-3}=\frac{98}{21}=\boxed{4.6667} \]</div>
@@ -962,6 +986,7 @@ Zero is inside, matching the FTR in (c).</div></div>
 <span class="kx">N=12</span>. <span class="kx">SSA=18.75</span>, <span class="kx">SSB=67.17</span>,
 <span class="kx">SSAB=0.50</span>, <span class="kx">SSE=4.50</span>. Test the interaction at 5%.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A one-line interaction test. All the work is in the degrees of freedom.</div>
 <details><summary>Solution D4</summary><div class="sol">
 <div class="step"><div class="do">df: AB <span class="kx">=(2-1)(3-1)=2</span>, Error
 <span class="kx">=N-ab=12-6=6</span>.
@@ -979,6 +1004,7 @@ Zero is inside, matching the FTR in (c).</div></div>
 <span class="kx">\mathrm{Cov}(\hat\psi_1,\hat\psi_2)=\sigma^2\sum_j\dfrac{c_jk_j}{n_j}</span>, then find the
 correlation.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Two short proofs. Both are about naming facts rather than heavy algebra.</div>
 <details><summary>Solution D5</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> \[ \frac{SSE}{\sigma^2}=\frac{1}{\sigma^2}\sum_{j=1}^{a}(n_j-1)S_j^2
 =\sum_{j=1}^{a}\frac{(n_j-1)S_j^2}{\sigma^2} \]
@@ -1015,6 +1041,7 @@ has 7 to 8 questions rather than 6, so these are where the extra questions most 
 <tr><td><b>Total</b></td><td>71</td><td>82</td><td>65</td><td>66</td><td>284</td></tr></tbody></table></div>
 <p>(a) ANOVA table. (b) Test treatments at 5%. (c) Compute and interpret the relative efficiency.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A blocked design where the real question is the last part: <b>was blocking worth it?</b> The F test on blocks hints at it, but relative efficiency answers it properly, and it needs both degrees of freedom.</div>
 <details><summary>Solution E1</summary><div class="sol">
 <div class="new"><div class="h">Blocking, and the CF shortcut, once</div>
 A <b>nuisance</b> factor affects the response but you do not care about it. Left alone it inflates MSE and
@@ -1057,6 +1084,7 @@ would mean blocking cost more in df than it saved.</div></div>
 <tr><td><b>4</b></td><td>D=10</td><td>A=10</td><td>B=12</td><td>C=14</td></tr></tbody></table></div>
 <p>Analyse fully and draw conclusions.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A Latin square is just an ANOVA table with two extra rows. The only genuinely new things are hunting the treatment totals (the letters are scattered) and remembering error df is (a-1)(a-2).</div>
 <details><summary>Solution E2</summary><div class="sol">
 <div class="new"><div class="h">Latin square, once</div>
 RCB removes <b>one</b> nuisance direction; a Latin square removes <b>two</b>. Each treatment appears exactly
@@ -1094,6 +1122,7 @@ RCB, not research conclusions.</div></div>
 <p>Verify that a BIBD with <span class="kx">a=8</span>, <span class="kx">r=8</span>,
 <span class="kx">k=4</span>, <span class="kx">b=16</span> does not exist.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A two-line existence proof. Compute lambda; if it is not a whole number, no such design exists. They design these so that r comes out clean and only lambda fails.</div>
 <details><summary>Solution E3</summary><div class="sol">
 <div class="step"><div class="do">Check the counting relation first:
 <span class="kx">ar=8(8)=64</span> and <span class="kx">bk=16(4)=64</span>. Consistent, so no contradiction yet.
@@ -1109,6 +1138,7 @@ that <span class="kx">r</span> comes out clean and only <span class="kx">\lambda
 A: 12, 15, 9, 11, 14.&nbsp;&nbsp; B: 20, 18, 25, 22, 19.&nbsp;&nbsp; C: 16, 13, 17, 21, 10.<br>
 Test at 5%. State the hypotheses, statistic, critical value and decision.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A rank test. The values themselves stop mattering once you rank them. Watch the degrees of freedom: it is a-1 and the distribution is chi-square, not F.</div>
 <details><summary>Solution E4</summary><div class="sol">
 <div class="new"><div class="h">Why ranks, once</div>
 Replace the numbers by their <b>ranks</b> in the pooled sample and the shape of the distribution stops
@@ -1134,6 +1164,7 @@ rank. Check <span class="kx">21+62+37=120=\frac{15(16)}{2}</span>.</div></div>
 classify <span class="kx">R^2</span>. (b) Two groups, means 8 and 12, <span class="kx">n_1=n_2=8</span>,
 sds 2 and 3: find and classify <span class="kx">d</span>. (c) Name three ways to increase power.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Effect size is about <b>how big</b>, not <b>how significant</b>. The two are different questions and he tests that you know it.</div>
 <details><summary>Solution E5</summary><div class="sol">
 <div class="step"><div class="do">\[ R^2=\frac{6.30}{17.50}=0.36\;\Rightarrow\;\textbf{large} \]
 \[ S_{12}^2=\frac{7(2^2)+7(3^2)}{8+8-2}=\frac{28+63}{14}=6.5,\quad S_{12}=2.5495 \]
@@ -1160,6 +1191,7 @@ With 7 to 8 questions this year rather than 6, these are live.</p>
 <p>(a) Compute the Tukey HSD critical difference. (b) Which pairs of treatments differ?
 (c) Give a 95% Tukey CI for <span class="kx">\mu_1-\mu_3</span>.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Tukey is the pairwise specialist. One critical difference is computed once (balanced design) and then compared against every observed gap.</div>
 <details><summary>Solution V1</summary><div class="sol">
 <div class="new"><div class="h">Tukey, once</div>
 Tukey controls the family-wise rate across <b>all pairwise</b> comparisons at once, using the
@@ -1189,6 +1221,7 @@ same HSD.</div></div>
 <span class="kx">\psi_1=\mu_1+\mu_2-2\mu_3</span> (<span class="kx">\hat\psi_1=24</span>,
 <span class="kx">s_{\hat\psi_1}=5.8310</span>). Use Scheffe at 5%. Why is Scheffe the right choice here?</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>The point is not the arithmetic, it is <b>why Scheffe</b>: the contrast was chosen after seeing the data, which rules out Bonferroni, Sidak and Tukey.</div>
 <details><summary>Solution V2</summary><div class="sol">
 <div class="new"><div class="h">Scheffe, once</div>
 Scheffe controls the family-wise rate over <b>every possible contrast simultaneously</b>, including ones you
@@ -1210,6 +1243,7 @@ valid for a contrast you did not pre-specify.</p>
 <p>For <span class="kx">a=3</span> treatments, construct a set of Helmert contrasts and verify they are
 mutually orthogonal (balanced design).</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A construction question. Follow the pattern and orthogonality is automatic; verifying it is one dot product.</div>
 <details><summary>Solution V3</summary><div class="sol">
 <div class="new"><div class="h">Helmert construction, once</div>
 Compare group 1 to the average of all the rest. Then zero out group 1 and compare group 2 to the average of
@@ -1235,6 +1269,7 @@ orthogonal set. Their sums of squares add to SSA exactly.</div></div>
 <p>(a) Which t test should you use, and why? (b) Carry it out at 5%.
 (c) What is the relationship between this test and a one-way ANOVA on the same two groups?</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Choosing between pooled and Welch, and justifying the choice. The final part is the conceptual payoff: for two groups, the t test and ANOVA are the same test.</div>
 <details><summary>Solution V4</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> The variance test gives <span class="kx">p=0.62>0.05</span>, so there
 is no evidence against equal variances. Use the <b>pooled</b> t test with
@@ -1262,6 +1297,7 @@ line; a residuals-versus-fitted plot showing a clear funnel shape widening to th
 collected by measuring the same 10 subjects under all four conditions.</p>
 <p>(a) State the three assumptions and assess each. (b) What should the analyst do?</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A diagnosis question with no numbers. Match each piece of evidence to an assumption, then rank the damage. The trap is reaching for Kruskal-Wallis when the broken assumption is independence, which it cannot fix.</div>
 <details><summary>Solution V5</summary><div class="sol">
 <div class="scroll"><table><thead><tr><th>Assumption</th><th>Evidence</th><th>Verdict</th></tr></thead>
 <tbody>
@@ -1295,6 +1331,7 @@ expectancy on A and D equals that on I and P; (iii) controlling for both, all me
 <span class="kx">H_0</span> for: (i) equal slopes for all medications; (ii) controlling for both covariates,
 medication has no significant effect.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>ANCOVA with two covariates. Nothing conceptually new, but the interaction model now needs <b>six</b> extra terms, not three, because each covariate interacts with each indicator.</div>
 <details><summary>Solution V6</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> Let <span class="kx">I_A,I_D,I_I</span> be indicators for
 medicines A, D and I (Placebo is the reference and gets none).
@@ -1336,6 +1373,7 @@ zero: all nine.</div></div>
 <p>(a) Show <span class="kx">E[MSE]=\sigma^2</span>.
 (b) State <span class="kx">E[MSA]</span> and explain in one sentence why this makes the F test work.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>This is the theory behind the F test. Being able to state E[MSA] explains in one line why a big F is evidence against the null.</div>
 <details><summary>Solution V7</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> Within group <span class="kx">j</span>,
 <span class="kx">S_j^2</span> is unbiased for <span class="kx">\sigma^2</span>, so
@@ -1357,6 +1395,7 @@ only</b>. The full derivation of (b) is Practice 5 Question 4.</div></div>
 <div class="Q"><div class="num">V8 <span class="pts">Proof variant &middot; the partition</span></div>
 <p>Show that <span class="kx">SST=SSA+SSE</span>.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>The partition proof. It is short and the entire trick is that deviations from a mean add to zero.</div>
 <details><summary>Solution V8</summary><div class="sol">
 <div class="step"><div class="do">Add and subtract the group mean inside the total deviation:
 \[ \sum_j\sum_i(Y_{ij}-\bar Y_T)^2=\sum_j\sum_i\big[(\bar Y_j-\bar Y_T)+(Y_{ij}-\bar Y_j)\big]^2 \]
@@ -1378,6 +1417,7 @@ when you kill the cross term.</div></div>
 observation per cell. (a) Why can you not fit the interaction? (b) Write the model you must use and give the
 full df column. (c) How would you test factor A?</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A design-logic question. With one observation per cell there is no room left to estimate error, so you are forced to assume additivity.</div>
 <details><summary>Solution V9</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> <span class="kx">N=ab=12</span>. If the interaction were fitted,
 error df would be <span class="kx">N-ab=12-12=0</span>: there would be nothing left to estimate
@@ -1406,6 +1446,7 @@ own physiotherapists.</p>
 observational study, and why? (e) Is "clinic" a treatment factor or a block? (f) Are physiotherapist and
 clinic crossed or nested?</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>All the Unit 1 vocabulary in one place. The subtle parts are recognising a block rather than a factor, and spotting nesting when each group has its own personnel.</div>
 <details><summary>Solution V10</summary><div class="sol">
 <div class="new"><div class="h">Unit 1 definitions, once</div>
 <b>Experimental unit:</b> the entity that receives a treatment independently of the others.
@@ -1436,6 +1477,7 @@ steeply from <span class="kx">b_1</span> to <span class="kx">b_3</span> while th
 <p>(a) What does the plot suggest? (b) If the interaction F test confirms it, what may you conclude about the
 main effects? (c) Describe the finding without using the word "interaction".</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Reading a picture. Crossing lines mean the ranking flips, so no single statement about one factor can be true on its own.</div>
 <details><summary>Solution V11</summary><div class="sol">
 <p><b>(a)</b> Non-parallel and crossing lines suggest a <b>substantial interaction</b>. Parallel lines would
 mean none.</p>
@@ -1455,6 +1497,7 @@ Have the sentence ready: <i>"the effect of [factor A] on [response] is not the s
 <p>Three groups: A: 4, 6, 5.&nbsp; B: 9, 8, 10.&nbsp; C: 7, 5, 6. Build the complete ANOVA table from
 scratch and test at 5%.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Building everything from raw numbers. Use the correction-factor route; it avoids the rounding trap that comes from computing the grand mean first.</div>
 <details><summary>Solution V12</summary><div class="sol">
 <div class="step"><div class="do">Group totals 15, 27, 18; grand total 60; <span class="kx">N=9</span>,
 <span class="kx">a=3</span>, <span class="kx">n_j=3</span>.
@@ -1483,6 +1526,7 @@ in that total. This is the fastest route when raw data are given.</div></div>
 <span class="kx">n_2=10</span>, <span class="kx">s_2^2=25.0</span>. A variance test gives
 <span class="kx">p=0.01</span>. Which test, and what degrees of freedom?</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>One detail decides this: Welch's df rounds <b>down</b>. He put that on a slide precisely because it is easy to get backwards.</div>
 <details><summary>Solution V13</summary><div class="sol">
 <div class="step"><div class="do">The variance test rejects equality (<span class="kx">p=0.01<0.05</span>), so use
 <b>Welch</b>, not pooled.
@@ -1505,6 +1549,7 @@ variances, which is the whole point.</div>
 (b) Why may a contrast be tested equivalently with a t test rather than an F test?<br>
 (c) Derive <span class="kx">\alpha_{SB}=1-(1-\alpha_{FW})^{1/k}</span>.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Three short 'why' questions he has literally written on his own slides. Each is one or two lines.</div>
 <details><summary>Solution V14</summary><div class="sol">
 <p><b>(a)</b> His rule on the slide: <b>df equals the number of equal signs in your system of tests</b>. A
 contrast states one equation, <span class="kx">\psi=0</span>, so one equal sign, so
@@ -1532,6 +1577,7 @@ outright. Two lines, worth easy marks.</div></div>
 mean 64.375. Find all <span class="kx">\hat\alpha_j</span> and <span class="kx">\hat\beta_k</span>, and state
 the check.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A free arithmetic check dressed as a question. Effects always sum to zero within each factor.</div>
 <details><summary>Solution V15</summary><div class="sol">
 <div class="step"><div class="do">\[ \hat\alpha_j=\bar Y_{Aj}-\bar Y_T:\quad
 -3.125,\;-4.375,\;6.375,\;1.125 \]
@@ -1558,6 +1604,7 @@ pwr.anova.test(k = 4, n = NULL, f = 0.25, sig.level = 0.05, power = 0.8)
 <p>(a) Interpret the first output. (b) How many subjects in total are needed for 80% power at
 <span class="kx">f=0.5</span>? (c) Why does the required n jump when <span class="kx">f</span> drops to 0.25?</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Reading power output rather than computing it. Two details: n is <b>per group</b>, and required sample sizes round <b>up</b>, the opposite of Welch df.</div>
 <details><summary>Solution V16</summary><div class="sol">
 <p><b>(a)</b> With 4 groups of 4 subjects each and a large effect size
 (<span class="kx">f=0.5</span>) at <span class="kx">\alpha=0.05</span>, the power is only <b>0.2686</b>. So
@@ -1585,6 +1632,7 @@ the same point as "statistical significance is not practical significance" seen 
 <span class="kx">\mu_1+\mu_4-\mu_2-\mu_3</span>.<br>
 (d) A single pre-planned contrast, and nothing else.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Pure judgement, no numbers. Match the scenario to the procedure and justify in one line each.</div>
 <details><summary>Solution V17</summary><div class="sol">
 <div class="scroll"><table><thead><tr><th></th><th>Procedure</th><th>Why</th></tr></thead>
 <tbody>
@@ -1731,6 +1779,7 @@ would have been about as good (C) the blocks should be re-randomized (D) the tre
 <p>(d) Welch's degrees of freedom comes out as 12.83. You should use:<br>
 (A) 13 (B) 12 (C) 12.83 (D) 14</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Four quick conceptual checks. None needs a calculator.</div>
 <details><summary>Solution P1</summary><div class="sol">
 <p><b>(a) B.</b> The block F is a diagnostic about whether the design choice paid off, never a research
 conclusion. Confirm properly with the relative efficiency.</p>
@@ -1750,6 +1799,7 @@ rounds <b>up</b>, the opposite direction.</p>
 <p>(a) Find <span class="kx">\bar Y_T</span>. (b) Find SSA and SSE. (c) Complete the ANOVA table.
 (d) Test at 5%. (e) Find <span class="kx">R^2</span> and classify it by Cohen's guidelines.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>One-way ANOVA with both of his favourite traps at once: unbalanced groups and standard deviations rather than variances.</div>
 <details><summary>Solution P2</summary><div class="sol">
 <div class="step"><div class="do"><span class="kx">a=4</span>, <span class="kx">N=6+5+6+5=22</span>.
 <b>Unbalanced</b>, so weight by <span class="kx">n_j</span>:
@@ -1792,6 +1842,7 @@ only the sentence.</div></div>
 (d) Write <span class="kx">H_0</span> of equal means in the dummy model and in the cell means model.
 (e) Express <span class="kx">H_0:\beta_3=0</span> in terms of population means.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Coding, continuing the same data. Because the design is unbalanced, the effect-coding intercept is the <b>weighted</b> grand mean.</div>
 <details><summary>Solution P3</summary><div class="sol">
 <div class="trap"><div class="h">Careful: this design is unbalanced</div>
 So the grand mean for effect coding is the <b>weighted</b> one, <span class="kx">\bar Y_T=19.8</span> from
@@ -1821,6 +1872,7 @@ The researcher planned these in advance:</p>
 (c) Using Bonferroni over all three contrasts, give a 94% CI for <span class="kx">\psi_3</span>.
 (d) Which procedure would you have used instead if the contrasts had been chosen after seeing the data?</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>Contrasts where the unbalanced design forces the full orthogonality condition with the n values in it, and a Bonferroni interval at an unusual confidence level.</div>
 <details><summary>Solution P4</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> <b>Unbalanced</b>, so use the full condition with
 <span class="kx">n_j</span>. <span class="kx">\mathbf c_1=(1,0,-1,0)</span>,
@@ -1864,6 +1916,7 @@ would mean here, without using the word. (d) Test the main effects, if it is leg
 temperature 2 column mean is 92.4, and the grand mean is 105.5. Find
 <span class="kx">\widehat{(\alpha\beta)}_{32}</span>.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A two-way table with mixed givens and a close interaction call. State the comparison explicitly.</div>
 <details><summary>Solution P5</summary><div class="sol">
 <div class="step"><div class="do"><span class="kx">a=3</span>, <span class="kx">b=2</span>,
 <span class="kx">n=3</span>, so <span class="kx">N=abn=18</span>.<br>
@@ -1913,6 +1966,7 @@ supplies four animals, one per diet.</p>
 and test the diets at 5%. (d) Given <span class="kx">MS_{\text{Block}}=24.125</span>, compute the relative
 efficiency and interpret it.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A blocked design end to end, finishing with the question that really matters: did blocking pay for itself?</div>
 <details><summary>Solution P6</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> A <b>randomized complete block design</b>: litter is a nuisance
 factor, every diet appears once in every litter, so the blocks are complete.
@@ -1953,6 +2007,7 @@ same mean; (ii) controlling for GPA, Enhanced and Intensive together equal Stand
 (i) equal slopes; (ii) controlling for GPA, program has no effect at all. (e) State the extra assumption the
 parallel planes model needs beyond the usual ANOVA assumptions.</p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>The ANCOVA question. All hypotheses, no arithmetic. Build the table, read them off.</div>
 <details><summary>Solution P7</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> Let <span class="kx">I_E=1</span> if the student is in Enhanced
 and 0 otherwise; <span class="kx">I_I=1</span> if in Intensive and 0 otherwise. Standard is the reference.
@@ -1993,6 +2048,7 @@ Let <span class="kx">\hat\psi=\sum_j c_j\bar Y_j</span> with <span class="kx">\s
 <span class="kx">MSE</span> rather than <span class="kx">\sigma^2</span>.</p>
 <p><i>Show all steps and explicitly name the theorem or fact used at each step.</i></p>
 </div>
+<div class="ask"><div class="h">What this question is really asking</div>A proof that walks from one variance to a distribution, then asks the conceptual question of why MSE replaces sigma squared.</div>
 <details><summary>Solution P8</summary><div class="sol">
 <div class="step"><div class="do"><b>(a)</b> \[ V(\bar Y_j)=V\!\left(\frac{1}{n_j}\sum_{i=1}^{n_j}Y_{ij}\right)
 \overset{\text{by independence}}{=}\frac{1}{n_j^{2}}\sum_{i=1}^{n_j}V(Y_{ij})
